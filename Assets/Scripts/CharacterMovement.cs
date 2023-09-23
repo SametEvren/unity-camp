@@ -1,3 +1,4 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
@@ -39,6 +40,5 @@ public class CharacterMovement : MonoBehaviour
         var moveDirection = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
 
         controller.Move(moveDirection.normalized * (moveSpeed * Time.deltaTime));
-
     }
 }
