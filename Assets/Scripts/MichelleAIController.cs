@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MichelleAIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public NavMeshAgent agent;
+    public Camera mainCamera;
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray movePosition = mainCamera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(movePosition, out var hitInfo))
+            {
+                agent.SetDestination(hitInfo.point);
+            }
+        }
+            
     }
 }
