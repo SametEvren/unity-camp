@@ -1,3 +1,4 @@
+using ScriptableObjectFolder;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     private static readonly int IsRunning = Animator.StringToHash("isRunning");
     private static readonly int Jump = Animator.StringToHash("Jump");
+    
 
     private void Update()
     {
@@ -21,7 +23,11 @@ public class CharacterMovement : MonoBehaviour
         var direction = movement.normalized;
 
         if (Input.GetKeyDown(KeyCode.Space))
+        {
             animatorController.SetTrigger(Jump);
+            GetComponent<PlayerView>().player.characterName = "Samet";
+            GetComponent<PlayerView>().SetupCharacter();
+        }
         
         if (!(direction.magnitude >= 0.1f))
         {
