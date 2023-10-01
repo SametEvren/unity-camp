@@ -16,8 +16,8 @@ public class ArrayExample : MonoBehaviour
         numberArray[2] = 7;
         numberArray[3] = 9;
         
-        Debug.Log(numberArray[2]);
-        Debug.Log(names[3]);
+        // Debug.Log(numberArray[2]);
+        // Debug.Log(names[3]);
 
         players = GameObject.FindGameObjectsWithTag("RedTeam");
     }
