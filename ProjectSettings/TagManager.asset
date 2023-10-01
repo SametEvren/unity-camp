@@ -9,6 +9,7 @@ TagManager:
   - RedTeam
   - BlueTeam
   - Obstacle
+  - Wall
   layers:
   - Default
   - TransparentFX
